@@ -1,0 +1,16 @@
+version: '3'
+services:
+  my-service:
+    image: backmlops
+    ports:
+      - "5000:5000" 
+    environment:
+      - BACK_SERVICE_URL=http://127.0.0.1:5000
+
+  front-end:
+    image: frontmlops
+    ports:
+      - "5001:5001"
+    environment:
+      - FRONT_ENV_VARIABLE=environment  
+      - ANOTHER_ENV_VARIABLE=42
